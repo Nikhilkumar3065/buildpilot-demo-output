@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PageShell Demo</title>
+  <link rel="stylesheet" href="../src/components/PageShell/PageShell.css" />
+  <style>
+    /* Demo-only styles to show content inside the shell */
+    .demo-content {
+      background: var(--page-shell-surface);
+      border: 1px solid var(--page-shell-border);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+    .demo-content h1 {
+      margin-top: 0;
+      font-size: 1.75rem;
+    }
+    .demo-content p {
+      color: var(--page-shell-muted);
+    }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .demo-card {
+      background: var(--page-shell-bg);
+      border: 1px solid var(--page-shell-border);
+      border-radius: 6px;
+      padding: 1.25rem;
+    }
+    .demo-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+    }
+    .demo-card p {
+      margin: 0;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="page-shell__header">
+      <div class="page-shell__header-inner">
+        <a class="page-shell__brand" href="#">BuildPilot</a>
+        <nav class="page-shell__nav" aria-label="Primary">
+          <ul class="page-shell__nav-list">
+            <li class="page-shell__nav-item"><a class="page-shell__nav-link" href="#">Home</a></li>
+            <li class="page-shell__nav-item"><a class="page-shell__nav-link" href="#">About</a></li>
+            <li class="page-shell__nav-item"><a class="page-shell__nav-link" href="#">Services</a></li>
+            <li class="page-shell__nav-item"><a class="page-shell__nav-link" href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-shell__main">
+      <div class="page-shell__main-inner">
+        <section class="demo-content">
+          <h1>PageShell Component Demo</h1>
+          <p>
+            This is a standalone demonstration of the <code>PageShell</code> layout.
+            It includes a sticky header with brand and navigation, a flexible main
+            content area, and a footer that stays at the bottom of the viewport
+            when content is short.
+          </p>
+
+          <div class="demo-grid">
+            <article class="demo-card">
+              <h3>Responsive Header</h3>
+              <p>Stacks vertically on small screens; brand and nav remain accessible.</p>
+            </article>
+            <article class="demo-card">
+              <h3>Sticky Footer</h3>
+              <p>Footer stays at the bottom of the viewport when content is sparse.</p>
+            </article>
+            <article class="demo-card">
+              <h3>Customizable</h3>
+              <p>Override title, nav items, and footer text via props in React.</p>
+            </article>
+            <article class="demo-card">
+              <h3>CSS Variables</h3>
+              <p>Colors, spacing, and max-width are configurable via CSS custom properties.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-shell__footer">
+      <div class="page-shell__footer-inner">
+        &copy; 2026 BuildPilot. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
