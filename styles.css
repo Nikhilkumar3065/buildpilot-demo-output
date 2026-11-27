@@ -12,12 +12,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Ensure interactive elements meet the recommended 44x44px touch target. */
-button,
-a,
-input,
-select,
-textarea {
+/* Ensure primary interactive buttons meet the recommended 44x44px touch target.
+   Applied selectively to button elements only, not inline anchors or form fields,
+   to avoid breaking inline links or layouts. */
+button {
   min-height: 44px;
   min-width: 44px;
 }
