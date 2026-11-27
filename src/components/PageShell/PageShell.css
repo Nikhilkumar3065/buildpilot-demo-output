@@ -1,0 +1,123 @@
+/**
+ * PageShell styles
+ *
+ * Responsive, sticky-footer layout with a consistent header,
+ * placeholder navigation, main content area, and footer.
+ */
+
+:root {
+  --page-shell-bg: #f7f8fa;
+  --page-shell-surface: #ffffff;
+  --page-shell-text: #1f2933;
+  --page-shell-muted: #52606d;
+  --page-shell-accent: #2563eb;
+  --page-shell-border: #e4e7eb;
+  --page-shell-max-width: 1100px;
+  --page-shell-gap: 1.5rem;
+  --page-shell-header-height: 64px;
+}
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--page-shell-bg);
+  color: var(--page-shell-text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+}
+
+.page-shell__header {
+  background: var(--page-shell-surface);
+  border-bottom: 1px solid var(--page-shell-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.page-shell__header-inner,
+.page-shell__main-inner,
+.page-shell__footer-inner {
+  width: 100%;
+  max-width: var(--page-shell-max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.page-shell__header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--page-shell-gap);
+  min-height: var(--page-shell-header-height);
+  flex-wrap: wrap;
+}
+
+.page-shell__brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--page-shell-text);
+  text-decoration: none;
+}
+
+.page-shell__brand:hover,
+.page-shell__brand:focus {
+  color: var(--page-shell-accent);
+}
+
+.page-shell__nav-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.page-shell__nav-link {
+  color: var(--page-shell-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0;
+}
+
+.page-shell__nav-link:hover,
+.page-shell__nav-link:focus {
+  color: var(--page-shell-accent);
+}
+
+.page-shell__main {
+  flex: 1 0 auto;
+  padding: 2rem 0;
+}
+
+.page-shell__footer {
+  background: var(--page-shell-surface);
+  border-top: 1px solid var(--page-shell-border);
+  color: var(--page-shell-muted);
+}
+
+.page-shell__footer-inner {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .page-shell__header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+    min-height: auto;
+  }
+
+  .page-shell__nav-list {
+    gap: 0.75rem;
+  }
+
+  .page-shell__main {
+    padding: 1.25rem 0;
+  }
+}
